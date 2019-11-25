@@ -54,25 +54,43 @@
   <body>
     <div class="body__container">
       <!-- HEADER -->
-      <!-- 큼직한 부분에는 주석처리를 하는 것이 수정에도 편리 -->
       <header class="section">
-        <div class="inner">
-          <!-- 컨텐츠들을 중앙으로 모으기위한 박스 -->
-
-          <div class="menu-group">
-            <!--랩핑-->
+        <div class="inner clearfix">
+          <div class="menu-group float--left">
             <div class="logo">
               <a href="#">
                 GitHub
               </a>
             </div>
-            <ul class="main-menu">
-              <!--메인메뉴와 서브메뉴구분-->
-              <!--메뉴,항목이 나올시 li를 사용하는 것이 좋다-->
+            <ul class="main-menu ">
               <li><a href="#">Personal</a></li>
               <li><a href="#">Open source</a></li>
               <li><a href="#">Business</a></li>
               <li><a href="#">Explore</a></li>
+            </ul>
+          </div>
+
+          <!-- 오른쪽 그룹 - 반응형을 생각해서 작업, 우선순위는 수직 > 수평 이므로 위에서아래로의 순서로 html을 작성한다 -->
+          <div class="sign-group float--right">
+            <div class="btn-group">
+              <a href="#" class="btn sign-in">Sign in</a>
+              <a href="#" class="btn btn--primary sign-up">Sign up</a>
+            </div>
+            <!-- 양식은 고유해햐 하므로 id추가 -->
+            <form id="search-form" method="POST" action="">
+              <input
+                id="search"
+                type="text"
+                class="input--text"
+                placeholder="Search GitHub"
+              />
+              <!-- 숨겨져야한다 - css로 숨기기 -->
+              <input type="submit" value="submit" />
+            </form>
+            <ul class="sub-menu">
+              <li><a href="#">Pricing</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Support</a></li>
             </ul>
           </div>
         </div>
