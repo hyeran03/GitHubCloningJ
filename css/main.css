@@ -44,12 +44,24 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   box-sizing: border-box;
-  outline: none; /* 포커싱 되었을 때 테두리의 상태 */
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075); /* 박스안에 x y 블러 색상 의 그림자를 만듬 */
+  outline: none;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
   font-size: 16px;
 }
-.input--text:focus /* 포커스 됐을 경우 */ {
+.input--text:focus {
   border-color: #51a7e8;
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075),
-    0 0 5px rgba(81, 167, 232, 0.5); /* 앞서 적용한 박스안쪽 그림자를 없애지 않기위해서는 , 를 이용 다중적용한다 */
+    0 0 5px rgba(81, 167, 232, 0.5);
+}
+
+/* Placeholder - 표준기술이 아니다 */
+/* Vendor Prefix(브라우저 업처별 접두사) 를 이용해 실험적으로 사용할 수 있다 */
+.input--text::-webkit-input-placeholder {
+  color: #cacaca;
+}
+.input--text::-ms-input-placeholder {
+  color: #cacaca;
+}
+.input--text::-moz-input-placeholder {
+  color: #cacaca;
 }
