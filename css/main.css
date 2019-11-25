@@ -54,8 +54,7 @@
     0 0 5px rgba(81, 167, 232, 0.5);
 }
 
-/* Placeholder - 표준기술이 아니다 */
-/* Vendor Prefix(브라우저 업처별 접두사) 를 이용해 실험적으로 사용할 수 있다 */
+/* INPU - Placeholder */
 .input--text::-webkit-input-placeholder {
   color: #cacaca;
 }
