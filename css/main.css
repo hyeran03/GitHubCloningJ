@@ -64,3 +64,51 @@
 .input--text::-moz-input-placeholder {
   color: #cacaca;
 }
+
+/* HEADER */
+header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
+  background: #fff;
+}
+header .inner {
+  height: 78px; /* .innder에 작업하는 이유는 부모는 자식요소의 영향을 받기 때문에 이중으로 적용시키는 것을 방지 */
+  max-width: 980px;
+  /* 중앙으로모으기 */
+  margin: 0 auto; /* 무조건 적으로 width가 정의되어 있어야한다 */
+}
+header .menu-group {
+  /* 로고와 ul 수평정렬 */
+  display: flex;
+  /* 수직정렬 */
+  align-items: center;
+  height: 100%; /* .inner 높이 */
+}
+header .logo {
+  margin-right: 10px;
+}
+
+header .logo a {
+  background: url("../img/logo.svg");
+  width: 32px;
+  height: 32px;
+  display: block; /* 인라인 요소는 공간을 가질수 없으므로 블럭으로 바꾸어 가로와 세로를 준다 */
+  text-indent: -9999px; /*들여쓰기하여(-9999px 은 약속) text를 숨기기 - 구조적으로 html에는 text가 남아있다 */
+}
+/* 로고 hover시 색상변경 */
+header .logo a:hover {
+  background: url("../img/logo_on.svg");
+}
+header .main-menu {
+  /* li 수평정렬 */
+  display: flex;
+}
+/* 공간클릭시에도 해당 a를 클릭하도록 */
+header .main-menu li a {
+  padding: 10px;
+  display: block; /* 인라인 요소는 padding 값을 사용할 수 없으므로 변경 */
+  color: #3c4146;
+}
+header .main-menu li a:hover {
+  color: #4078c0;
+}
