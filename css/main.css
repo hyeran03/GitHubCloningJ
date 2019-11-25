@@ -21,6 +21,7 @@ a {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.5;
+  text-align: center;
   cursor: pointer;
   box-sizing: border-box;
   position: relative;
@@ -58,7 +59,7 @@ a {
     0 0 5px rgba(81, 167, 232, 0.5);
 }
 
-/* INPUT - Placeholder */
+/* INPUT - Placeholder - VendorPrefix */
 .input--text::-webkit-input-placeholder {
   color: #cacaca;
 }
@@ -83,8 +84,6 @@ a {
 }
 
 /* SUMMARY */
-.summary {
-}
 .summary__title {
   font-size: 38px;
   font-weight: 300;
@@ -117,11 +116,10 @@ header {
   background: #fff;
 }
 header .inner {
-  margin: 0 auto;
+  height: 78px;
 }
 header .menu-group {
   display: flex;
-
   align-items: center;
   height: 100%;
 }
@@ -194,6 +192,10 @@ header .sub-menu li a:hover {
   background-position: bottom left;
   /* 배경잘리지않게하기 */
   background-size: cover;
+  /* 수평정렬만들어주기 */
+  display: flex;
+
+  /* position: relative; */
 }
 /* 배경 살짝 어둡게하기 */
 .section--visual::before {
@@ -208,6 +210,14 @@ header .sub-menu li a:hover {
 }
 .section--visual .inner {
   padding: 160px 0;
+  display: flex;
+}
+.section--visual .summary {
+  /* summary 영역을 가변하는 영역으로 차지하도록 */
+  flex-grow: 1;
+  flex-basis: 0;
+  /* 다음과 같이 단축할수 있다 flex: 1 0 0; > flex: 1; 0은 기본값으로 없앨수있다 */
+  margin-right: 90px;
 }
 .section--visual .summary__title {
   color: #fff;
@@ -218,4 +228,36 @@ header .sub-menu li a:hover {
 .section--visual .summary__description {
   color: #fff;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 1px 25px rgba(0, 0, 0, 0.75);
+}
+#sign-form {
+  /* 부모에서 크기고정시켜주기 */
+  width: 340px;
+  margin-top: 16px;
+}
+#sign-form li {
+  margin-bottom: 17px;
+}
+/* 마지막에는 굳이 여백이 필요없기에 */
+#sign-form li:last-child {
+  margin-bottom: 0;
+}
+#sign-form .input--text {
+  /* 전체 크기(부모요소)를 정한뒤 내용(자식요소)을 100%를 사용하게끔 만든다 */
+  width: 100%;
+  height: 40px;
+}
+#sign-form .caption {
+  font-size: 12px;
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+  text-align: center;
+}
+#sign-form [type="submit"] {
+  width: 100%;
+  height: 62px;
+  padding: 0 25px;
+  font-size: 20px;
+  /* flex요소에서 수평정렬 */
+  justify-content: center;
 }

@@ -42,12 +42,13 @@
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap"
       rel="stylesheet"
     />
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"
       integrity="sha256-7VVaJ5GDwFQiLIc+eNksQLUSSY5JNZtqv9o2BI8UGYg="
       crossorigin="anonymous"
-    />
+    /> -->
+    <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/main.css" />
   </head>
 
@@ -98,31 +99,53 @@
         <div class="inner">
           <div class="summary">
             <div class="summary__title">
-              How people build software
+              How&nbsp;people build&nbsp;software
+              <!--&nbsp; 를 사용할경우 띄어쓰기를 연결시킬수 있다-반응형에서도 자연스럽게 이어지도록하기위해 <br>을 사용하지 않는다-->
             </div>
             <div class="summary__description">
               Millions of developers use GitHub to build personal projects,
-              support their businesses, and work together on open source
+              support their businesses, and&nbsp;work together on open source
               technologies.
             </div>
           </div>
 
           <form id="sign-form" method="POST" action="">
-          <ul>
-            <li><input type="text" class="input--text" placeholder="Pick a username"></li>
-            <li><input type="email" class="input--text" placeholder="Your email address"></li>
-            <li>
-              <input type="password" class="input--text" placeholder="Create a password">
-              <p class="caption">Use at least one letter, one numeral, and seven characters.</p>
-            </li>
-            <li>
-              <button type="submit" class="btn btn--primary">Sign up for GitHub</button>
-              <p class="caption">By clicking "Sign up for GitHub", you agree to our terms of service and privacy policy. We'll occasionally send you
-              account related emails.
-</p>
-            </li>
-          </ul>   
-         
+            <ul>
+              <li>
+                <input
+                  type="text"
+                  class="input--text"
+                  placeholder="Pick a username"
+                />
+              </li>
+              <li>
+                <input
+                  type="email"
+                  class="input--text"
+                  placeholder="Your email address"
+                />
+              </li>
+              <li>
+                <input
+                  type="password"
+                  class="input--text"
+                  placeholder="Create a password"
+                />
+                <p class="caption">
+                  Use at least one letter, one numeral, and seven characters.
+                </p>
+              </li>
+              <li>
+                <button type="submit" class="btn btn--primary">
+                  Sign up for GitHub
+                </button>
+                <p class="caption">
+                  By clicking "Sign up for GitHub", you agree to our terms of
+                  service and privacy policy. We'll occasionally send you
+                  account related emails.
+                </p>
+              </li>
+            </ul>
           </form>
         </div>
       </section>
