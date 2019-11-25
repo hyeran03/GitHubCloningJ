@@ -1,5 +1,9 @@
-body {
-  background-color: tomato;
+.body__container {
   font-family: "Roboto", sans-serif;
-  font-size: 100px;
+  font-size: 16px;
+  /* defalut사이즈이지만 폰트사이즈를 명시하여 오류를 감소시킴 */
+  font-weight: 400;
+  /* 두께 defalut 값 정의 */
+  color: #333;
+  /* 어두운 회색 */
 }

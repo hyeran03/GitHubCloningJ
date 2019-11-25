@@ -42,24 +42,18 @@
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap"
       rel="stylesheet"
     />
-    <!-- reset.css 적용하기 -->
     <link rel="stylesheet" href="css/reset.css" />
-    <!-- 플러그인이나 라이브러리 같이 미리 작성되어진 파일은 작성하고자하는 파일보다 먼저 불러져야한다 -->
     <link rel="stylesheet" href="css/main.css" />
-
-    <!-- 오픈 reset.css 적용하기 - reset.css cdn -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css"
-    />
-    <!-- 웹에서 불러오기 때문에 사용성이 좋다 -->
   </head>
 
   <body>
-    <ul>
-      <li>123</li>
-      <li>456</li>
-      <li>789</li>
-    </ul>
+    <div class="body__container">
+      <!-- 왜 언더바(_)를 두번작성했는가? - 작명규칙 BEM  -->
+      <!-- 
+        - : 일반적인 이름(작명) ex) .toggle-btn
+        __ : 무엇의 일부분 (구조적) ex) .body__container
+        -- : 무엇의 상태 (상태적) ex) .btn--success 
+        -->
+    </div>
   </body>
 </html>
