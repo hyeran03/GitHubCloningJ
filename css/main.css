@@ -82,6 +82,34 @@ a {
   float: right;
 }
 
+/* SUMMARY */
+.summary {
+}
+.summary__title {
+  font-size: 38px;
+  font-weight: 300;
+  line-height: 1.25;
+  margin-bottom: 18px;
+}
+.summary__description {
+  font-size: 26px;
+  font-weight: 300;
+  color: #767676;
+  line-height: 1.5;
+}
+
+/* 공통적인 부분은 착실히 빼는 것이 좋다 */
+/* SECTION & INNER */
+.section {
+  position: relative; /*absolute가 걸리도록 */
+}
+.section .inner {
+  max-width: 980px;
+  margin: 0 auto;
+  box-sizing: border-box; /*부분별한 크기변동을 막음*/
+  position: relative; /*부모요소에 넣음-position이 inner내부에서 만들었을때 inner에 걸리도록*/
+}
+
 /* HEADER */
 header {
   border-bottom: 1px solid rgba(0, 0, 0, 0.75);
@@ -89,9 +117,6 @@ header {
   background: #fff;
 }
 header .inner {
-  height: 78px;
-  max-width: 980px;
-
   margin: 0 auto;
 }
 header .menu-group {
@@ -125,16 +150,13 @@ header .main-menu li a {
 header .main-menu li a:hover {
   color: #4078c0;
 }
-/* sign-group 수평만들기 */
 header .sign-group {
   display: flex;
-  /* 수직정렬 */
   height: 100%;
   align-items: center;
 }
 header .btn-group {
-  order: 2; /*order의 숫자의 값이 높을수로 순서가 밀려난다 기본값은 0*/
-  /* 버튼을 명시적으로 수평으로 만듬 -inlie-flex에서 flex로 변경 */
+  order: 2;
   display: flex;
 }
 header .btn-group .sign-in {
@@ -148,7 +170,6 @@ header .btn-group .sign-in {
   width: 160px;
   font-size: 14px;
 }
-/* #search 의 다음형제요소인 type이 submit인 요소를 선택하겠다 */
 #search + [type="submit"] {
   display: none;
 }
@@ -164,4 +185,37 @@ header .sub-menu li a {
 }
 header .sub-menu li a:hover {
   color: #4078c0;
+}
+
+/* VISUAL */
+.section--visual {
+  background-image: url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  /* 배경잘리지않게하기 */
+  background-size: cover;
+}
+/* 배경 살짝 어둡게하기 */
+.section--visual::before {
+  content: "";
+  position: absolute; /*부모요소에 반드시 position값이 있어야한다 - 안전장치확인 */
+  top: 0;
+  left: 0;
+  /* width:100%, height:100% 와 같은 효과를 준다 */
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+.section--visual .inner {
+  padding: 160px 0;
+}
+.section--visual .summary__title {
+  color: #fff;
+  font-size: 54px;
+  /* 글자배경의 그림자 - 은은한 효과를 위해 이중으로 효과를 줌*/
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 1px 25px rgba(0, 0, 0, 0.75);
+}
+.section--visual .summary__description {
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 1px 25px rgba(0, 0, 0, 0.75);
 }
