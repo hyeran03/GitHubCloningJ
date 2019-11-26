@@ -15,7 +15,7 @@ a {
   background: #eee linear-gradient(to bottom, #fcfcfc, #eee);
   border: 1px solid #d5d5d5;
   border-radius: 4px;
-  display: inline-flex;
+  display: flex; /*flex로 수정하여 미디어쿼리에서 display변경이 작동하도록*/
   align-items: center;
   padding: 0 12px;
   font-size: 14px;
@@ -380,8 +380,7 @@ footer .site-links li a:hover {
   text-decoration: underline;
 }
 footer .logo {
-  /* 가운데정렬 */
-  position: absolute; /*inner에서 relative설정을 해놓음 */
+  position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
@@ -391,6 +390,81 @@ footer .logo {
   height: 24px;
 }
 footer .log:hover svg {
-  /*logo를 hover하면 svg를 제어한다 */
-  fill: #4078c0; /*svg의 색을 채운다 */
+  fill: #4078c0;
+}
+
+/* MEDIA */
+@media (max-width: 1024px) {
+  header.section .inner {
+    /*우선순위를 맞추기위해 일치선택자를 사용한다 */
+    max-width: none; /*우선순위를 생각하고 넣어야한다 */
+    height: auto; /*가변하게끔 기본값으로 설정, height값을 없앰 */
+    padding: 0 20px;
+  }
+  /* 수직으로 쌓이기 때문에 float의 개념도 없애야한다 */
+  header .menu-group,
+  header .sign-group {
+    float: none;
+  }
+  /* 수평정렬을 수직정렬로 바꾸기 */
+  header .menu-group {
+    display: block;
+  }
+
+  /*header 에 들어있는 내용만큼만 header가 나오게함 */
+  header .logo {
+    padding: 12px 0;
+  }
+  header .main-menu {
+    display: block;
+    margin-bottom: 10px;
+  }
+  header .main-menu li {
+    border-top: 1px solid #e5e5e5;
+  }
+  header .main-menu li a {
+    padding: 16px 0;
+  }
+  header .sign-group {
+    display: block; /*order가 해제되고 html구조대로 */
+    padding: 10px 0 20px;
+  }
+  header .btn-group {
+    display: block;
+  }
+  header .btn-group .btn {
+    justify-content: center;
+  }
+  header .btn-group .sign-in {
+    margin-right: 0;
+    margin-bottom: 12px;
+  }
+  #search-form {
+    margin-top: 12px;
+    margin-right: 0;
+  }
+  #search {
+    width: 100%;
+    height: 42px;
+    text-align: center;
+  }
+  header .sub-menu {
+    margin-top: 12px;
+    margin-right: 0;
+    justify-content: center;
+  }
+  header .toggle {
+    display: none; /*화면에서 없애기 */
+  }
+  #toggle-btn {
+    background: url("../img/toggle-btn.svg");
+    width: 18px;
+    height: 24px;
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    cursor: pointer;
+    /*대체텍스트없애기 */
+    text-indent: -9999px;
+  }
 }
