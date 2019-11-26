@@ -325,8 +325,7 @@ header .sub-menu li a:hover {
 }
 
 /* WHERE IS */
-.section--where-is {
-}
+
 .section--where-is .inner {
   padding-top: 80px;
 }
@@ -372,8 +371,7 @@ header .sub-menu li a:hover {
 }
 
 /* FOOTER */
-footer {
-}
+
 footer .inner {
   padding: 50px 0;
   border-top: 1px solid #eee;

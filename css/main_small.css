@@ -1,7 +1,7 @@
 /* COMMON */
 /* 선택자우선순위 언제나 확인할것 */
 .summary__title {
-  font-size: 34px !important; /*가장중요하다! 우선순위를 뛰어넘어 덮어씌워짐 */
+  font-size: 34px !important;
 }
 .summary__description {
   font-size: 22px;
@@ -16,7 +16,7 @@
 
 /* WHERE IS */
 #map {
-  width: auto; /*inner을 건드리지 않고 map만 늘어나기를 원하기때문 */
+  width: auto;
   margin: 40px -20px 0 -20px;
   border-left: none;
   border-right: none;
@@ -24,7 +24,7 @@
 
 /* PRICING CARD */
 .section--pricing .card {
-  display: block; /*수직정렬*/
+  display: block;
 }
 .section--pricing .card .cell2 {
   border-left: none;
@@ -32,12 +32,8 @@
 }
 
 /* FOOTER */
-/* 우선순위 파악후 덮어쓰기할수 있는지를 판단 */
 footer .site-links {
   float: none;
-  /* 가운데정렬 - 더 작아질경우 깨짐*/
-  /* justify-content: center; */
-
   display: block;
   text-align: center;
 }
@@ -45,5 +41,5 @@ footer .site-links:first-child {
   margin-bottom: 20px;
 }
 footer .site-links li {
-  display: inline; /*수직정렬된 .site-links를 text화 시켜 한줄로 만듬 - 줄바꿈이 가능하게됨*/
+  display: inline;
 }
