@@ -97,16 +97,15 @@ a {
   line-height: 1.5;
 }
 
-/* 공통적인 부분은 착실히 빼는 것이 좋다 */
 /* SECTION & INNER */
 .section {
-  position: relative; /*absolute가 걸리도록 */
+  position: relative;
 }
 .section .inner {
   max-width: 980px;
   margin: 0 auto;
-  box-sizing: border-box; /*부분별한 크기변동을 막음*/
-  position: relative; /*부모요소에 넣음-position이 inner내부에서 만들었을때 inner에 걸리도록*/
+  box-sizing: border-box;
+  position: relative;
 }
 
 /* HEADER */
@@ -190,20 +189,14 @@ header .sub-menu li a:hover {
   background-image: url("../img/bg.jpg");
   background-repeat: no-repeat;
   background-position: bottom left;
-  /* 배경잘리지않게하기 */
   background-size: cover;
-  /* 수평정렬만들어주기 */
   display: flex;
-
-  /* position: relative; */
 }
-/* 배경 살짝 어둡게하기 */
 .section--visual::before {
   content: "";
-  position: absolute; /*부모요소에 반드시 position값이 있어야한다 - 안전장치확인 */
+  position: absolute;
   top: 0;
   left: 0;
-  /* width:100%, height:100% 와 같은 효과를 준다 */
   bottom: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.3);
@@ -213,16 +206,13 @@ header .sub-menu li a:hover {
   display: flex;
 }
 .section--visual .summary {
-  /* summary 영역을 가변하는 영역으로 차지하도록 */
   flex-grow: 1;
   flex-basis: 0;
-  /* 다음과 같이 단축할수 있다 flex: 1 0 0; > flex: 1; 0은 기본값으로 없앨수있다 */
   margin-right: 90px;
 }
 .section--visual .summary__title {
   color: #fff;
   font-size: 54px;
-  /* 글자배경의 그림자 - 은은한 효과를 위해 이중으로 효과를 줌*/
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 1px 25px rgba(0, 0, 0, 0.75);
 }
 .section--visual .summary__description {
@@ -230,19 +220,16 @@ header .sub-menu li a:hover {
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25), 0 1px 25px rgba(0, 0, 0, 0.75);
 }
 #sign-form {
-  /* 부모에서 크기고정시켜주기 */
   width: 340px;
   margin-top: 16px;
 }
 #sign-form li {
   margin-bottom: 17px;
 }
-/* 마지막에는 굳이 여백이 필요없기에 */
 #sign-form li:last-child {
   margin-bottom: 0;
 }
 #sign-form .input--text {
-  /* 전체 크기(부모요소)를 정한뒤 내용(자식요소)을 100%를 사용하게끔 만든다 */
   width: 100%;
   height: 40px;
 }
@@ -258,6 +245,33 @@ header .sub-menu li a:hover {
   height: 62px;
   padding: 0 25px;
   font-size: 20px;
-  /* flex요소에서 수평정렬 */
   justify-content: center;
+}
+
+/* FEATURE */
+.section--feature {
+  background: #f5f5f5;
+  padding-top: 66px;
+}
+.section--feature .summary {
+  max-width: 820px; /*사이즈가 가변하도록 */
+  margin: 0 auto; /*정렬*/
+  text-align: center; /*텍스트가운데정렬 */
+}
+.section--feature .video {
+  /* 유투브에서 제공하는 동영상은 16:9의비율로 제공 그러므로 16:9의 비율이 유지되도록 */
+  max-width: 650px;
+  margin: 50px auto;
+}
+.video .video-ratio {
+  height: 0;
+  padding-top: 56.25%;
+  position: relative;
+}
+.video .video-ratio iframe {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
