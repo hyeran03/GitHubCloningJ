@@ -254,12 +254,11 @@ header .sub-menu li a:hover {
   padding-top: 66px;
 }
 .section--feature .summary {
-  max-width: 820px; /*사이즈가 가변하도록 */
-  margin: 0 auto; /*정렬*/
-  text-align: center; /*텍스트가운데정렬 */
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
 }
 .section--feature .video {
-  /* 유투브에서 제공하는 동영상은 16:9의비율로 제공 그러므로 16:9의 비율이 유지되도록 */
   max-width: 650px;
   margin: 50px auto;
 }
