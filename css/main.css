@@ -281,20 +281,10 @@ header .sub-menu li a:hover {
 .section--feature .tiles .inner {
   max-width: 1200px;
 }
-/* 가운데 정렬하고 column화 하기 */
+
 .section--feature .tiles ul {
-  /* 가운데 정렬을 하지만 반응형이므로 flex보다는 grid를 사용하는 것이 맞다 */
-  display: grid; 
-  grid-template-columns: repeat(
-    4,
-    1fr
-    ); /*4개의 컬럼을 만들고 1:1:1:1의 비율을 갖는다 - 반응형에서 이것만 변경하면 그리드의 형태가 변경된다*/
-    /* grid는 최신기술이므로 구형의 브라우저를 고려한다면 사용하기 힘든 기술이다 
-    li{
-      float: left; -부모요소(ul)에 clearfix를 넣는것을 확인
-      width: 25%; 네개의 컬럼이므로 - %를 적용할때는 여백에의해 변형될수있으므로 boxsizing:borderbox가 적용되있는지 확인해야한다
-    }
-    */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 .section--feature .tiles li {
   padding: 34px 24px;
@@ -307,9 +297,9 @@ header .sub-menu li a:hover {
   border-right: none;
 }
 .section--feature .tiles li img {
-  max-width: 100%; /* 부모사이즈에 맞게 만들면서 넘쳐나가는것을 방지 */
-  padding: 14px 10% 24px; /*좌우는 %사용 */
-  box-sizing: border-box; /* 여백에 의해 이미지가 넘치는 것을 방지 */
+  max-width: 100%;
+  padding: 14px 10% 24px;
+  box-sizing: border-box;
 }
 .section--feature .tiles li h3 {
   font-size: 18px;
@@ -319,4 +309,20 @@ header .sub-menu li a:hover {
 .section--feature .tiles li p {
   font-size: 14px;
   color: #767676;
+}
+
+/* WHERE IS */
+.section--where-is {
+}
+.section--where-is .inner {
+  padding-top: 80px;
+}
+#map {
+  width: 100%;
+  height: 400px;
+  margin-top: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: none;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
 }

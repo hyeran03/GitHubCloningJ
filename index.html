@@ -98,7 +98,6 @@
       <section class="section section--visual">
         <div class="inner">
           <div class="summary">
-            <!-- summary의 정의를 확실히 하기위해 h태그와 p태그로 변경 -->
             <h2 class="summary__title">
               How&nbsp;people build&nbsp;software
             </h2>
@@ -212,6 +211,51 @@
           </div>
         </div>
       </section>
+
+      <!-- Where is -->
+      <section class="section section--where-is">
+        <div class="inner">
+          <div class="summary">
+            <div class="summary__title">
+              Where is GitHub?
+            </div>
+            <div class="summary__description">
+              GitHub is where people build software. More than 18 million people
+              use GitHub to discover, fork, and contribute to over 48 million
+              projects.
+            </div>
+          </div>
+
+          <!-- map api 삽입 -->
+          <div id="map"></div>
+
+        </div>
+      </section>
     </div>
-  </body>
+
+    <!-- map api js-->
+    <script>
+      function initMap(){
+        const myLatLng = {
+          lat: 37.783393,
+          lng: -122.391240
+        }
+        const map = new google.maps.Map(
+          document.getElementById('map'),
+          {
+            center: myLatLng,
+            scrollwheel: false,
+            zoom: 18
+          }
+        );
+        const marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'GitHub'
+        });
+      }
+    </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5opyvkyFMLnEUQM_8uTmwQPf8XCKQXfU&callback=initMap" ansyc defer>
+  </script>
+</body>
 </html>
