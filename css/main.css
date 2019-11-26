@@ -183,6 +183,17 @@ header .sub-menu li a {
 header .sub-menu li a:hover {
   color: #4078c0;
 }
+#toggle-btn {
+  display:none; /*을 사용하여 아래의 내용을 숨기고 미디워쿼리에서 나오도록설정한다 */
+    background: url("../img/toggle-btn.svg");
+    width: 18px;
+    height: 24px;
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    cursor: pointer;
+    text-indent: -9999px;t
+}
 
 /* VISUAL */
 .section--visual {
@@ -396,22 +407,17 @@ footer .log:hover svg {
 /* MEDIA */
 @media (max-width: 1024px) {
   header.section .inner {
-    /*우선순위를 맞추기위해 일치선택자를 사용한다 */
-    max-width: none; /*우선순위를 생각하고 넣어야한다 */
-    height: auto; /*가변하게끔 기본값으로 설정, height값을 없앰 */
+    max-width: none;
+    height: auto;
     padding: 0 20px;
   }
-  /* 수직으로 쌓이기 때문에 float의 개념도 없애야한다 */
   header .menu-group,
   header .sign-group {
     float: none;
   }
-  /* 수평정렬을 수직정렬로 바꾸기 */
   header .menu-group {
     display: block;
   }
-
-  /*header 에 들어있는 내용만큼만 header가 나오게함 */
   header .logo {
     padding: 12px 0;
   }
@@ -426,7 +432,7 @@ footer .log:hover svg {
     padding: 16px 0;
   }
   header .sign-group {
-    display: block; /*order가 해제되고 html구조대로 */
+    display: block;
     padding: 10px 0 20px;
   }
   header .btn-group {
@@ -454,17 +460,14 @@ footer .log:hover svg {
     justify-content: center;
   }
   header .toggle {
-    display: none; /*화면에서 없애기 */
+    display: none;
+  }
+  header .toggle.on {
+    display: block; /* .on이 있다면 나타나도록 */
   }
   #toggle-btn {
-    background: url("../img/toggle-btn.svg");
-    width: 18px;
-    height: 24px;
-    position: absolute;
-    top: 16px;
-    right: 20px;
-    cursor: pointer;
-    /*대체텍스트없애기 */
-    text-indent: -9999px;
+    display: block;
+    /*아래의 내용은 미리 적용되어 있어야 하는것이 좋다 */
+
   }
 }
